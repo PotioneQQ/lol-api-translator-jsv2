@@ -1,0 +1,16 @@
+{
+  "name": "lol-api-translator",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0",
+    "ssl-root-cas": "^1.3.1"
+  }
+}

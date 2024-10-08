@@ -21,3 +21,4 @@ const getData = (url, port, path) => {
 }
 
 module.exports = { getData }
+value.exports = { data }

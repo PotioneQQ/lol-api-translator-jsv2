@@ -1,5 +1,5 @@
 const express = require('express')
-const fetchGameData = require('./fetchGameData.js')
+const { getData } = require('./fetchGameData.js')
 const app = express()
 const port = 3000
 const url = 'localhost'

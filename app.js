@@ -13,9 +13,9 @@ var data = fetchGameData.getData(url, urlPort, path)
 var fetchedData = fetchGameData.fetchedData
 
 app.get('/', (req, res) => {
-    console.log(data)
+    console.log(fetchedData)
     console.log("a")
-    res.send(data)
+    res.send(fetchedData)
 })
 app.listen(port, () => {
     console.log(`port ${port}`)

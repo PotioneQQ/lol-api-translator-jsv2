@@ -1,13 +1,11 @@
 const getData = (url, port, path) => {
     var https = require('node:https')
-    var tls = require('node:tls')
-    var fs = require('node:fs')
-    var process = require('node:process')
     const rootCas = require('ssl-root-cas').create();
+    var fetchedData
     require('https').globalAgent.options.ca = rootCas;
     rootCas.addFile("riotgames.pem")
     var lolApiPath = (`https://${url}:${port}${path}`)
-    var data
+    var fetchedData
     console.log(lolApiPath)
     https.get(lolApiPath, (res) => {
       console.log('statusCode:', res.statusCode)
@@ -21,4 +19,4 @@ const getData = (url, port, path) => {
 }
 
 module.exports = { getData }
-value.exports = { fetchedData }
+exports.fetchedData = this.fetchedData

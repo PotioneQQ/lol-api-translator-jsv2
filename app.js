@@ -10,6 +10,7 @@ require('https').globalAgent.options.ca = rootCas;
 rootCas.addFile("riotgames.pem")
 
 var data = fetchGameData.getData(url, urlPort, path)
+var fetchedData = fetchGameData.fetchedData
 
 app.get('/', (req, res) => {
     console.log(data)

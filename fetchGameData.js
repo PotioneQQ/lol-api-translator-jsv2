@@ -12,13 +12,13 @@ const getData = (url, port, path) => {
     https.get(lolApiPath, (res) => {
       console.log('statusCode:', res.statusCode)
       console.log('headers:', res.headers)
-      res.on('data', (d) => {
-        data = process.stdout.write(d)
-        return d;
+      res.on('data', (fetchedData) => {
+        process.stdout.write(fetchedData)
+        return fetchedData;
       })
     })
-    return d;
+    return fetchedData
 }
 
 module.exports = { getData }
-value.exports = { data }
+value.exports = { fetchedData }

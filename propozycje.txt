@@ -1,2 +1,3 @@
 zrobic przez fetch() a nie https.get()
 od razu zrobic wysylanie przez expressa i wyrzucic objekt json z funkcji
+zrobic callback z funkcji zbierającej dane z gru

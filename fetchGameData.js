@@ -1,22 +1,20 @@
-const getData = (url, port, path) => {
-    var https = require('node:https')
-    const rootCas = require('ssl-root-cas').create();
-    var fetchedData
-    require('https').globalAgent.options.ca = rootCas;
-    rootCas.addFile("riotgames.pem")
-    var lolApiPath = (`https://${url}:${port}${path}`)
-    var fetchedData
-    console.log(lolApiPath)
-    https.get(lolApiPath, (res) => {
-      console.log('statusCode:', res.statusCode)
-      console.log('headers:', res.headers)
-      res.on('data', (fetchedData) => {
-        process.stdout.write(fetchedData)
-        return fetchedData;
-      })
-    })
-    return fetchedData
+async function getData(path) {
+  const rootCas = require('ssl-root-cas').create();
+  require('https').globalAgent.options.ca = rootCas;
+  rootCas.addFile("riotgames.pem")
+  var lolApiPath = (process.env.URL + path)
+  console.log(lolApiPath)
+  try {
+    const response = await fetch(lolApiPath)
+    if (!response.ok){
+      throw new Error(`Response status :${response.status}`)
+    }
+    const json = await response.json()
+    console.log(json);
+    console.log(typeof(json))
+    return json
+    } catch (error) {
+      console.error(error.message);
+  }
 }
-
 module.exports = { getData }
-exports.fetchedData = this.fetchedData

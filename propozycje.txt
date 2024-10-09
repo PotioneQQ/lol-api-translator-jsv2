@@ -1,0 +1,2 @@
+zrobic przez fetch() a nie https.get()
+od razu zrobic wysylanie przez expressa i wyrzucic objekt json z funkcji

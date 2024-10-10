@@ -18,10 +18,17 @@ require('https').globalAgent.options.ca = rootCas;
 rootCas.addFile("riotgames.pem")
 
 app.get('/', (req, res) => {
-    var fetchedData = fetchGameData.getData(path)
-    console.log(typeof(fetchedData))
-    console.log("a")
-    res.send(fetchedData)
+  fetchGameData.getData(path).then((fetchedData) => {
+    console.log(fetchedData.allPlayers[0].isDead);
+    if (fetchedData.allPlayers[9] == undefined)
+      console.log("mniej niz 10")
+    else
+      var json = {
+        "isDead0":fetchedData.allPlayers[0].isDead,
+        "isDead1":fetchedData.allPlayers[1].isDead
+      }
+    res.send(json);
+});
 })
 app.listen(port, () => {
     console.log(`port ${port}`)

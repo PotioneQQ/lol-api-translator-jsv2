@@ -5,7 +5,7 @@
 //(nie sprawdzalem jeszcze na spectatorze, ale jezeli gracze beda w kolejnosci to nie powinno byc problemu)
 //
 //
-//TODO: send data for drakes/heralds/czerwie pustki killed from last 5 seconds as an t/f endpoint. Possibly multikills as well
+//TODO: send data for drakes/heralds/czerwie pustki killed from last 5 seconds as an t/f endpoint. Possibly multikills as well; stop app from crashing when league is not open (connection resets)
 
 const express = require('express')
 const undici = require('undici')

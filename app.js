@@ -32,6 +32,7 @@ app.get('/dead', (req, res) => {  //returns death status for each player
     var deadList = []
       array.forEach( element => {
         dead = {
+          "championName":element.championName,
           "isDead":element.isDead,
           "respawnTimer":element.respawnTimer
         }
